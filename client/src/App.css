@@ -1,3 +1,7 @@
+body {
+  background-color: #191a27 !important;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,102 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* 
+background: #191a27
+card background: #25263b
+card element: #191b2e
+green: #2dd6a0
+button: #050505
+grey: #b8b8b3
+*/
+
+nav a {
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 20px;
+}
+
+.card-background {
+  background-color: #25263b;
+  border-radius: 20px;
+  width: 35%;
+  height: 550px;
+}
+
+.card-background h5 {
+  font-weight: bold;
+  color: #2dd6a0;
+  margin-bottom: 15px;
+}
+
+.card-background input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 15px;
+  background-color: #191b2e;
+  color: white;
+  outline: none;
+}
+
+.card-background input:focus {
+  border: 1px solid #2dd6a0;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.card-background small {
+  color: #b8b8b3;
+}
+
+.card-background button {
+  background-color: #2dd6a0;
+  color: #25263b;
+  margin: 15px 0;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  border: none;
+  transition-duration: .4s;
+  font-weight: bold;
+}
+
+.card-background button:hover {
+  box-shadow: 0 9px 12px 0 rgba(0,0,0,0.24), 0 8px 20px 0 rgba(0,0,0,0.19);
+  transition-duration: .4s;
+}
+
+.card-background .card-row {
+  background-color: #191b2e;
+  border-radius: 5px;
+  width: 100%;
+  height: 90px;
+  color: #b8b8b3;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+
+.card-background .eth-cont {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-button {
+  background-color: #191a27;
+  border: 1px solid #2dd6a0;
+  border-radius: 5px;
+  color: #2dd6a0 !important;
+  transition-duration: .4s;
+}
+
+.navbar-button:hover {
+  background-color: #2dd6a0;
+  color: #191a27 !important;
+  cursor: pointer;
+  transition-duration: .4s;
 }

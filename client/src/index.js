@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { TransactionsProvider } from './contexts/context';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 ReactDOM.render(
   <React.StrictMode>
     <TransactionsProvider>
+      <Navbar />
       <App />
+      <Footer />
     </TransactionsProvider>
   </React.StrictMode>,
   document.getElementById('root')

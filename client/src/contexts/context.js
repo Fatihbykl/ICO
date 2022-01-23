@@ -20,7 +20,7 @@ export const TransactionsProvider = ({ children }) => {
         try {
             if(!ethereum) return alert("Please install MetaMask.");
             const accounts = await ethereum.request({method: "eth_accounts"});
-
+            
             if(accounts.length > 0) setCurrentAccount(accounts[0]);
             else console.log("No accounts found.");
 

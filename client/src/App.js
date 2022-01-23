@@ -1,16 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import { TransactionContext } from './contexts/context';
-import { useContext } from 'react';
+import ICO from './components/ICO';
 
 function App() {
-  const { connectWallet, currentAccount } = useContext(TransactionContext);
-  console.log(currentAccount);
-  
   return (
-    <div className="App">
-      <button onClick={connectWallet}>Connect Wallet</button>
-    </div>
+    <ICO />
   );
 }
 
