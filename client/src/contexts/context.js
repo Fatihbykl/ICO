@@ -17,6 +17,7 @@ const createContract = () => {
 export const TransactionsProvider = ({ children }) => {
     const [numberOfTokens, setNumberOfTokens] = useState("");
     const [currentAccount, setCurrentAccount] = useState("");
+    const [balance, setBalance] = useState("");
 
     const connectWallet = async () => {
         try {
@@ -48,6 +49,14 @@ export const TransactionsProvider = ({ children }) => {
             if(accounts.length > 0) setCurrentAccount(accounts[0]);
             else console.log("No accounts found.");
 
+            const balanceHex = await ethereum.request({
+                method: "eth_getBalance",
+                params: [accounts[0], "latest"],
+            });
+            const balanceWei = web3.utils.hexToNumberString(balanceHex);
+            const balance = web3.utils.fromWei(balanceWei, "ether");
+            setBalance(balance);
+
         } catch (error) {
             console.log("Error on checkIfWalletIsConnect -> ", error);
         }
@@ -65,6 +74,7 @@ export const TransactionsProvider = ({ children }) => {
         <TransactionContext.Provider
           value={{
               currentAccount,
+              balance,
               connectWallet,
               handleChange,
               buyTokens,

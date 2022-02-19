@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -11,9 +12,11 @@ import Navbar from './components/Navbar';
 ReactDOM.render(
   <React.StrictMode>
     <TransactionsProvider>
-      <Navbar />
-      <App />
-      <Footer />
+      <BrowserRouter>
+        <Navbar />
+        <App />
+        <Footer />
+      </BrowserRouter>
     </TransactionsProvider>
   </React.StrictMode>,
   document.getElementById('root')

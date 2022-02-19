@@ -20,7 +20,7 @@ async function main() {
   const token = await FZYToken.deploy();
   await token.deployed();
 
-  const tokensale = await TokenSale.deploy(hre.ethers.utils.parseUnits("0.1", 18), token.address, hre.ethers.utils.parseUnits("2000000", 18));
+  const tokensale = await TokenSale.deploy(hre.ethers.utils.parseUnits("0.0001", 18), token.address, hre.ethers.utils.parseUnits("1000000", 18));
   await tokensale.deployed();
 
   console.log("FZYToken deployed to:", token.address);

@@ -1,10 +1,12 @@
 import React from "react";
 import { TransactionContext } from '../contexts/context';
 import { useContext } from 'react';
+import { Link } from "react-router-dom";
 
 function Navbar() {
     const { connectWallet, currentAccount } = useContext(TransactionContext);
     let shortAddress = "";
+    //<a className="nav-link" href="/">IDO</a>
     if(currentAccount) { shortAddress = currentAccount.substr(0,5) + "..." + currentAccount.substr(currentAccount.length - 4); }
     return(
         <nav className="navbar navbar-expand-sm pt-4 pb-4">
@@ -17,10 +19,10 @@ function Navbar() {
                 <div className="collapse navbar-collapse float-end" id="collapsibleNavbar">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a className="nav-link" href="/">IDO</a>
+                        <Link to="/" className="nav-link">ICO</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/">Staking</a>
+                        <Link to="staking" className="nav-link">Staking</Link>
                     </li>
                     {
                         currentAccount
